@@ -1,11 +1,8 @@
-"""Comprobación adicional: ¿la memoria de la Versión B crece de forma lineal?
-
-Python guarda como objetos independientes (28 bytes cada uno) los enteros
+"""Python guarda como objetos independientes (28 bytes cada uno) los enteros
 mayores de 256. Las filas de la Versión B son listas de enteros que superan ese
-valor a partir de n ~ 400, y eso infla la memoria medida. Aquí se repite la
+valor a partir de n= 400, y eso infla la memoria medida. Aquí se repite la
 medición sustituyendo las filas por array('H') (2 bytes por celda) para
 separar el efecto del lenguaje del comportamiento del algoritmo.
-
 Uso:  python3 comprobacion_memoria_b.py
 """
 from array import array

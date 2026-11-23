@@ -1,7 +1,4 @@
-"""Punto de entrada único del proyecto.
-
-    python3 run_all.py            (o simplemente:  make)
-
+"""
 Ejecuta, en orden: 1) pruebas unitarias, 2) experimentos, 3) tablas y gráfica.
 Los resultados quedan en resultados/ y las parejas de cadenas en datos/.
 """
@@ -24,5 +21,5 @@ def main():
     informe.main([])
 
 
-if __name__ == "__main__":  # necesario: los procesos hijo (spawn) reimportan este módulo
+if __name__ == "__main__":
     main()

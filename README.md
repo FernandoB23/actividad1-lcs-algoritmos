@@ -2,7 +2,7 @@
 
 Actividad individual 1 · Diseño avanzado de algoritmos.
 Cálculo de la subsecuencia común más larga (LCS) de dos cadenas con tres estrategias
-y comparación empírica de tiempo de CPU y memoria.
+y comparación de tiempo de CPU y memoria.
 
 | Versión | Archivo | Estrategia | Tiempo | Espacio |
 |---|---|---|---|---|
@@ -14,14 +14,13 @@ y comparación empírica de tiempo de CPU y memoria.
 
 - Python 3.9 o superior (probado con 3.12). Solo biblioteca estándar.
 - `matplotlib` es **opcional**: solo se usa para dibujar la gráfica
-  (`pip install -r requirements.txt`). Sin él se generan igualmente los datos y las tablas.
+  (`pip install matplotlib`). Sin él se generan igualmente los datos y las tablas.
 
 ## Ejecución (un único comando)
 
 ```
 python run_all.py        # en Windows
 python3 run_all.py       # en Linux / macOS
-make                     # equivalente, si dispone de make
 ```
 
 Ejecuta en orden: 1) pruebas unitarias (`test_lcs.py`), 2) experimentos (`benchmark.py`),
@@ -39,7 +38,8 @@ Salidas:
 
 ```
 python benchmark.py --tamanos 8 12 16 100 500 1000 --limite-a 10 --repeticiones 3
-python informe.py
+python informe.py	# rehace tablas y gráfica a partir de resultados/resultados.csv
+python comprobacion_memoria_b.py  # memoria de B con filas array('H')
 python -m unittest -v test_lcs
 ```
 

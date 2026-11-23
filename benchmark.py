@@ -1,7 +1,5 @@
 """Experimentos: tiempo de CPU y pico de memoria de las tres versiones del LCS.
-
 Uso:  python3 benchmark.py [--tamanos 8 12 ...] [--limite-a 10] [--repeticiones 3]
-
 Diseño de la medición
   * Datos: una pareja de cadenas aleatorias de longitud n sobre {A, C, G, T}
     por cada tamaño, con semilla fija (reproducible). Se guardan en datos/.
@@ -49,10 +47,9 @@ def generar_pareja(n: int, semilla_base: int = 2026) -> tuple[str, str]:
 
 def medir_cpu(f, a: str, b: str, repeticiones: int, objetivo_s: float = 0.5):
     """Devuelve (mediana del tiempo de CPU en s, resultado de f(a, b)).
-
-    El tamaño del bucle se calibra con perf_counter (alta resolución) para que
-    cada muestra dure >= objetivo_s. Así la resolución de process_time (unos
-    15,6 ms en Windows) introduce un error relativo pequeño incluso con
+    El tamaño del bucle se calibra con perf_counter para que cada muestra
+    dure >= objetivo_s. Así la resolución de process_time (unos
+    15,6 ms) introduce un error relativo pequeño incluso con
     ejecuciones de microsegundos.
     """
     gc.collect()

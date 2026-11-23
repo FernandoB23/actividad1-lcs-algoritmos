@@ -1,6 +1,4 @@
 """Versión C - LCS con programación dinámica tabular.
-
-Los cuatro pasos del Tema 3:
   1. Planteamiento: el problema cumple el principio de optimalidad.
   2. Definición recursiva de la longitud de la solución:
         L[i][j] = 0                             si i = 0 o j = 0
@@ -9,14 +7,12 @@ Los cuatro pasos del Tema 3:
   3. Cálculo de la tabla de (m+1) x (n+1) celdas, de arriba abajo y de
      izquierda a derecha: cada subproblema se resuelve una sola vez.
   4. Construcción de la solución por retroceso desde L[m][n].
-
 Coste: tiempo Θ(m*n), espacio Θ(m*n).
 """
 
 
 def lcs_dinamica_stats(a: str, b: str) -> tuple[str, dict]:
     """Devuelve (LCS, estadísticas).
-
     Estadísticas: 'celdas' = celdas de tabla calculadas (m*n),
     'retroceso' = pasos dados al reconstruir la solución (<= m + n).
     """
@@ -54,7 +50,6 @@ def lcs_dinamica_stats(a: str, b: str) -> tuple[str, dict]:
 def lcs_dinamica(a: str, b: str) -> str:
     """Devuelve una subsecuencia común más larga de a y b."""
     return lcs_dinamica_stats(a, b)[0]
-
 
 if __name__ == "__main__":
     r = lcs_dinamica("ABCBDAB", "BDCABA")

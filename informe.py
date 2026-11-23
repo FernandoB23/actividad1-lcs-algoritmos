@@ -1,5 +1,4 @@
 """Tablas y gráficas a partir de resultados/resultados.csv.
-
 Uso:  python3 informe.py [--salida resultados]
 Genera: tablas.md (tablas listas para pegar) y grafica_comparativa.png
 (la gráfica requiere matplotlib; si no está instalado, solo se generan las tablas).
@@ -41,7 +40,7 @@ def num(x, decimales=0):
 
 
 def cifras(x, significativas=3):
-    """x con 'significativas' cifras significativas, en formato español."""
+    """x con cifras significativas, en formato español."""
     if x == 0:
         return "0"
     from math import floor, log10

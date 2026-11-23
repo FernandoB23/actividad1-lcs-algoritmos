@@ -1,7 +1,7 @@
 Python: 3.12.10 (CPython)
 Sistema: Windows 11
-Procesador: Intel64 Family 6 Model 158 Stepping 12, GenuineIntel
-Núcleos lógicos: 6
+Procesador: Intel64 Family 6 Model 170 Stepping 4, GenuineIntel
+Núcleos lógicos: 22
 Tamaños: [8, 12, 16, 20, 100, 250, 500, 1000, 2000]
 Repeticiones: 3
 Límite de tiempo de la Versión A: 10.0 s

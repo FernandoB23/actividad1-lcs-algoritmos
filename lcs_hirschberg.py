@@ -1,6 +1,4 @@
 """Versión B - LCS con la estrategia divide y conquista de Hirschberg.
-
-Idea (ver memoria):
   1. Se divide la cadena a en dos mitades: a1 = a[:mid] y a2 = a[mid:].
   2. En espacio lineal (solo dos filas) se calculan
         L[j] = |LCS(a1, b[:j])|           (puntuaciones directas)
@@ -8,17 +6,16 @@ Idea (ver memoria):
   3. El punto de corte k maximiza L[k] + R[n-k]; ese máximo es |LCS(a, b)|.
   4. Se resuelven recursivamente (a1, b[:k]) y (a2, b[k:]) y se concatenan.
 
-Coste: tiempo O(m*n), espacio O(min(m, n)).
+Coste: tiempo Θ(m*n), espacio O(min(m, n)+ log m).
 No se crean sublistas ni subcadenas de a: se trabaja con índices.
 """
 
 
 def _fila(a, i0, i1, b, j0, j1, inversa):
     """Última fila de la tabla de LCS de a[i0:i1] frente a b[j0:j1].
-
     inversa=False: devuelve F[j] = |LCS(a[i0:i1], b[j0:j0+j])|
     inversa=True : devuelve F[j] = |LCS(a[i0:i1], b[j1-j:j1])|
-                   (se recorren ambas cadenas al revés)
+    (se recorren ambas cadenas al revés)
     Solo se mantienen dos filas de longitud n+1.
     """
     bs = b[j0:j1]
@@ -45,7 +42,6 @@ def _fila(a, i0, i1, b, j0, j1, inversa):
 
 def _punto_corte(a, i0, mid, i1, b, j0, j1):
     """Devuelve k tal que L[k] + R[n-k] es máximo.
-
     L y R son locales: se liberan al volver, antes de recursar,
     para no acumular O(n) por cada nivel de la recursión.
     """
@@ -83,7 +79,6 @@ def _hirschberg(a, i0, i1, b, j0, j1, salida, est, nivel):
 
 def lcs_hirschberg_stats(a: str, b: str) -> tuple[str, dict]:
     """Devuelve (LCS, estadísticas).
-
     Estadísticas: 'celdas' = celdas de tabla evaluadas en total,
     'prof_max' = profundidad máxima de la recursión.
     """
@@ -99,7 +94,6 @@ def lcs_hirschberg_stats(a: str, b: str) -> tuple[str, dict]:
 def lcs_hirschberg(a: str, b: str) -> str:
     """Devuelve una subsecuencia común más larga de a y b."""
     return lcs_hirschberg_stats(a, b)[0]
-
 
 if __name__ == "__main__":
     r = lcs_hirschberg("ABCBDAB", "BDCABA")

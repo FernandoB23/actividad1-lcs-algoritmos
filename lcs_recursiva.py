@@ -1,15 +1,11 @@
 """Versión A - LCS recursivo directo (sin memorización).
-
 Recurrencia sobre los prefijos a[:i] y b[:j]:
-
     LCS(i, j) = ""                                   si i = 0 o j = 0
     LCS(i, j) = LCS(i-1, j-1) + a[i-1]               si a[i-1] == b[j-1]
     LCS(i, j) = la más larga de LCS(i-1, j), LCS(i, j-1)   en otro caso
-
 Cada subproblema (i, j) se vuelve a resolver una y otra vez, por lo que
 el coste es exponencial (ver análisis en la memoria).
 """
-
 
 def lcs_recursiva_stats(a: str, b: str) -> tuple[str, int]:
     """Devuelve (subsecuencia común más larga, número de llamadas recursivas)."""

@@ -1,5 +1,4 @@
 """Pruebas de validación de las versiones del LCS.
-
 Ejecutar:  python3 -m unittest -v test_lcs
 Como pueden existir varias LCS válidas, se comprueba (1) la longitud óptima
 y (2) que el resultado es subsecuencia de ambas cadenas.
